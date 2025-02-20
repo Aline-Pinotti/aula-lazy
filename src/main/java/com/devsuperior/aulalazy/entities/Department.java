@@ -13,10 +13,11 @@ public class Department {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long id;
 	public String name;
-	
-	@OneToMany(mappedBy = "department")
+
+	@OneToMany(mappedBy = "department") // , fetch = FetchType.EAGER para trazer os dados dos empregados aninhados, mas
+										// não recomendado
 	public List<Employee> employees = new ArrayList<>();
-	
+
 	public Department() {
 	}
 
